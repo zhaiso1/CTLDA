@@ -50,7 +50,7 @@ The CRAN package should be compatible with Windows and Mac operating systems.
 
 ```
 library(devtools)
-devtools::install_github("yaowuliu/ACAT") # Need to install ACAT
+devtools::install_github("yaowuliu/ACAT") # Need to install ACAT first
 devtools::install_github("zhaiso1/CTLDA")
 ```
 
@@ -91,7 +91,7 @@ dat <- simulate_trial(n_arm = 200,
                       sd = sd)
 ```
 
-```{r message=FALSE, warning=FALSE}
+```{r}
 # Check simulated data
 
 df <- dat %>% group_by(trt, M) %>% summarise(Y=round(mean(y), 3))
@@ -174,7 +174,7 @@ PMRM (delay-based) methods generally have inflation in Type I error.
 
 #### NCS
 
-```{r message=FALSE, warning=FALSE}
+```{r}
 fit6 <- ncs_ranslp_df2(dat, intercept = FALSE)
 
 p6 = fit6$wald.test$p_val; theta6 = summary(fit6$mod)$coefficients[3:4,1]
