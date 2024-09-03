@@ -182,7 +182,7 @@ p6 = fit6$wald.test$p_val; theta6 = summary(fit6$mod)$coefficients[3:4,1]
 print(paste0("The treatment effect is measured as treatment-by-time (i.e., basis functions of time) interaction coefficients, which equal to ", paste0(round(theta6, 2), collapse = ", "), ", respectively; p-value = ", round(p6, 3)))
 ```
 
-## CTLDA
+#### CTLDA
 
 ```{r}
 p7 = CTLDA(pvec = c(p2, p3, p5))
