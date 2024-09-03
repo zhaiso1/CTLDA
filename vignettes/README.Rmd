@@ -50,7 +50,7 @@ The CRAN package should be compatible with Windows and Mac operating systems.
 
 ```
 library(devtools)
-
+devtools::install_github("yaowuliu/ACAT") # Need to install ACAT
 devtools::install_github("zhaiso1/CTLDA")
 ```
 
