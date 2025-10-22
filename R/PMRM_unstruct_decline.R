@@ -39,8 +39,10 @@ unstruct.decline.m12 <- function(dat){
 
   # test decline
   if(pd_pmrm[1] != "error"){
-    test = anova(pd_pmrm)
-    re <- list(mod=pd_pmrm, p=test$`p-value`[length(test$`p-value`)])
+    b <- coef(pd_pmrm)[6:9]
+    Sigma <- vcov(pd_pmrm)[6:9,6:9]
+    test = wald.test(Sigma, b, L = rbind(c(1,0,0,0),c(0,1,0,0),c(0,0,1,0),c(0,0,0,1)))
+    re <- list(mod=pd_pmrm, p=test$result$chi2[3])
   } else{
     re <- list(mod=pd_pmrm, p=NA)
   }
