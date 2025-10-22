@@ -34,8 +34,10 @@ unstruct.delay.m12 <- function(dat){
 
   # test delay
   if(t_pmrm[1] != "error"){
-    test = anova(t_pmrm)
-    re <- list(mod=t_pmrm, p=test$`p-value`[length(test$`p-value`)])
+    b <- coef(t_pmrm)[6:9]
+    Sigma <- vcov(t_pmrm)[6:9,6:9]
+    test = wald.test(Sigma, b, L = rbind(c(1,0,0,0),c(0,1,0,0),c(0,0,1,0),c(0,0,0,1)))
+    re <- list(mod=t_pmrm, p=test$result$chi2[3])
   } else{
     re <- list(mod=t_pmrm, p=NA)
   }
