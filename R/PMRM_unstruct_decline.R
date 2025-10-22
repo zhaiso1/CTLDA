@@ -4,7 +4,7 @@
 #' @param dat a data frame of standard longitudinal data
 #' @return a list of fitted progression model for repeated measures and p-value
 #' @references Raket, L.L. (2022). Progression models for repeated measures: Estimating novel treatment effects in progressive diseases. Statistics in Medicine, 41(28), 5537-5557.
-#' @author Song Zhai11
+#' @author Song Zhai
 #' @export
 #'
 unstruct.decline.m12 <- function(dat){
