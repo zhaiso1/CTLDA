@@ -5,7 +5,7 @@
 #' @import ACAT
 #' @import dplyr
 #' @import robustbase
-#' @importFrom aod wald.test
+#' @importFrom aod wald.test2
 #' @importFrom lme4 lmer
 #' @importFrom pracma linspace
 #' @importFrom nlme gnls corSymm gnlsControl varIdent lme lmeControl
